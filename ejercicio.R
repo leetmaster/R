@@ -2,58 +2,77 @@
 rm(list=ls())
 # Establecer el directorio de trabajo en la raiz del usuario
 setwd('~')
+#install.packages("readxl")
 
 # Obtener el directorio de trabajo actual
 getwd()
 
-# Extraemos el dataset Contador Ciclista en formato CSV directamente de la página de datos abiertos de la CDMX y lo guardamos como DataFrame
+#a) Guardarla en un objetos de nombre "datos_resi"
+library(dplyr)
+library(readxl)
 
-df <- read.csv(url("https://datos.cdmx.gob.mx/explore/dataset/contador-ciclistas/download/?format=csv&timezone=America/Mexico_City&use_labels_for_header=true"), sep = ";", stringsAsFactors = FALSE)
+df <- read_excel("C:/Users/josegarcia/R/contador-ciclistas.xls")
 
-#Ver la estructura
+summary(df)
 str(df)
 
-# El día es un factor númerico, lo convierto a caracter para que no meta ruido
-df$Día <- as.character(df$Día)
+# graficar la ruta Revoluci�n
 
-# Lo mismo pasa con el año
-df$Año <- as.character(df$Año)
+plot(df[6])
 
-#Ver los primeros registros
-head(df,20)
+df[5]
 
-#Ver los últimos registros
-tail(df,20)
+#b) Obtener el promedio de todos los contadores
 
-#Ver el número de filas en la base de datos
-nrow(df)
+mean(df[2])
 
-#Ver el número de columans en la base de datos
-ncol(df)
+promedio_glucosa <- mean(datos_resi$glucosa)
 
-#Ver datos min,max, quintiles
-summary(df)
+promedio_temp
 
-#Obtener algún dato
-df[1,3]
+#c) Ordenar la table con base en la variable Mes
 
-head(df[order(df$Año, decreasing = TRUE),], 1)
+arrange(df, Mes)
 
-tail(df[order(df$Año, df$Mes),], decreasing = FALSE, 1)
+#d)Guardar en una variable �nicamente las columnas 5, 6 y 7
+
+reforma <- df[, 5]
+patriotismo <- df[, 6]
+revolucion <- df[,7]
+
+#e) Mostrar y guardar en una variable, la media de la variable glucosa por tipo de residente 
 
 
-#----------------------------------------------
-# OBTENER COLUMNAS DEL DATA FRAME
-#----------------------------------------------
+# TIP: El nombre de la tabla tiene espacios, se los quitamos con la siguiente funci�n
+names(df)[6]<-"Patriotismo"
 
-#Obtener toda una columna por su índice
-df[[5]] 
+tabla_patriotismo_por_mes <- df %>%
+group_by(Mes) %>%
+#summarise(mean(Patriotismo, na.rm=TRUE))
 
-#Obtener toda una columna por su nombre
-df[["Cont"]]
+# Notaste algo? Como contiene valores NA, debemos removerlos con na.rm=TRUE
+# Funciona igual con la suma
+# summarise(sum(Patriotismo,na.rm=TRUE))
 
-df[2,]
+#f) Extraer el 50% de los datos de forma aleatoria con reemplazo.
 
-tail(df[order(df$Año),])
+df %>% sample_frac(0.50, rep=T)
 
-df
+#Muestreo aleatorio simple con reemplazo: Después de que un elemento ha sido seleccionado del marco de la muestra se devuelve y es elegible para ser seleccionado nuevamente.
+
+#g)Extraer 10 datos de forma aleatoria sin reemplazo.
+
+df %>%
+sample_n(10)
+
+#h)En un objeto guardar los d�as que hubo m�s de 1000 ciclistas en Reforma222
+
+names(df)[5]<-"Reforma222"
+reforma_mayor_que_1000 <- filter(df, Reforma222 >=1000)
+reforma_mayor_que_1000
+
+#i) Guardar en una variable las fechas en que los 3 contadores registraron al menos 1000 ciclistas, cada uno
+
+names(df)[7]<-"Revolucion"
+contadores_mayor_1000 <- filter(select(df, D�a, Mes, A�o, Patriotismo, Reforma222, Revolucion), Patriotismo >= 1000, Reforma222 >= 1000, Revolucion >= 1000)
+contadores_mayor_1000

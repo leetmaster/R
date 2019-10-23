@@ -4,142 +4,68 @@ rm(list=ls())
 # Establecer el directorio de trabajo en la raiz
 setwd('~')
 
+
+
+# invocación de la biblioteca dplyr
+library(dplyr)
+
 # Tipos de datos en R
 
-# Logico
-
-verdadero <- TRUE
-falso <- FALSE
-
-# Numerico
-
-numerico <- 23.5
-
-# Entero
-
-entero <- 2L
-
-# Complejo
-
-complejo <- 2+5i
-
 # Caracter
+pA <- "Mercurio"
 
-caracter <- "Algo"
+pT <- "Terrestre"
 
-# Raw
+# Numerico entero
+pD <- 4879
 
-Raw <- charToRaw("hola")
+# Numerico real
+pR <- 58.16
+
+# Lógico
+pN <- F
 
 # Vectores (un solo tipo de datos)
 
-manzana <- c('roja', 'verde', 'amarilla')
-platano <- c('dominico', 'tabasco', 'macho')
-print(manzana)
+planeta <- c(pA, "Venus", "Tierra", "Marte", "Júpiter", "Saturno", "Urano", "Neptuno")
 
-# Lista (varios tipos de datos)
+tipo <- c(pT, "Terrestre", "Terrestre", "Terrestre", "Gas", "Gas", "Gas", "Gas")
 
-lista1 <- list(c(2,5,3),21.3, sin)
+diametro <- c(pD, 12104, 12742, 6779, 139882, 116464, 50724, 49242)
 
-# Matrices (dos dimensiones)
+rotacion <- c(pR, 243, 365, 312.7, 314.2, 0.104, 0.1714, 0.167)
 
-Matriz <- matrix(c('a','a','b','c','b','a'), nrow=2, ncol=3,byrow=TRUE)
+anillos <-c(pN, F, F, F, T, T, T, T)
 
-# Arreglos (multiples dimensiones)
+# DataFrame (conjunto de vectores de diferentes tipos)
+informacion_planetas <- data.frame(planeta, tipo, diametro, rotacion, anillos)
 
-arreglo <- array(c('verde','amarillo'), dim=c(3,3,2))
-
-# Factores
-
-# Data Frames
-
-frutas <- data.frame(manzana, platano)
-frutas
+print(informacion_planetas)
 
 # Funciones
 
-my.summary <- function(x){
-	
-	#cÃ³digo a ejecutar
-	s.out <- sum(x)
-	l.out <- length(x)
-	m.out <- s.out / l.out
-	out <- c(s.out, l.out, m.out)
-	names(out) <- c("sum", "lenght", "mean")
-	return(out)
-	
+# Muestra la estructura (tipos de datos) de la tabla
+str(informacion_planetas)
+
+# Muestra un resumen de los datos de la tabla
+summary(informacion_planetas)
+
+# Muestra toda la información del planeta tierra
+
+subset(informacion_planetas, planeta=="Tierra")
+
+# 
+
+if(informacion_planetas$rotacion >= 365) {
+    print("Días terrestres")
+} else {
+    print("No son días terrestres")
 }
 
-# asigno a una variable un rango de enteros del 1 al 10 
-z <- 1:10
-
-my.summary(z)
-
-nombreCompleto <- function(x,y){
-	
-	return(paste(x,y))
+num <- 0
+while(num < 8) {
+  print(informacion_planetas[,num])
+  num <- num +1
 }
 
-nombreCompleto("Ruben","Garcia")
 
-myBirthday <- function(a){
-	
-	return(2019-a)
-}
-
-myBirthday(1980)
-
-# Condicionales
-
-a <- 2
-b <- 3
-
-if(a == b){	
-	print("Son iguales")
-}else if (a<b){
-	print("menor")
-}else{
-	print("mayor")
-	
-}
-
-caso <- "T1"
-
-switch(caso,
-	T1={
-		X <- "Caso 1"
-	},
-	T2={
-		X <- "Caso 2"
-	},
-	T3={
-		X <- "Caso 3"
-	},
-	stop("Nada")
-	)
-
-
-# Ciclos
-
-v <- LETTERS[1:4]
-for (i in v){
-	
-	print(i)
-}
-
-for (i in 1:10){
-	print(i)
-}
-
-mymat = matrix(nrow=30, ncol=30)
-
-for(i in 1:dim(mymat)[1])
-{
-	for(j in 1:dim(mymat)[2]){
-		mymat[i,j] = i*j
-	}
-}
-
-print(mymat)
-
-dim(mymat)[1]
