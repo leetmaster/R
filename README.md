@@ -28,28 +28,56 @@ A mediados de los 70's se hacia estadística con Fortran lo cual llevaba mucho t
 ### Medidas de tendencia central
 
 Media
+
 Mediana
+
 Moda
 
 ### Medidas de dispersión
 
 Varianza
+
 Desviación estándar
 
 ## Fundamentos de programación
 
-###Valores, Tipos de datos y variables
+### Valores, Tipos de datos y variables
 
-###Operadores
+Caracter
+
+Numérico entero
+
+Numérico real
+
+Lógico
+
+Vector
+
+DataFrame
+
+### Operadores 
+
 Aritméticos
+
 Relacionales
+
 Lógicos
 
-###Condicionales
+### Condicionales
 
-###Ciclos
+if
 
-###Funciones
+### Ciclos
+
+while
+
+### Funciones
+
+Encapuslan bloques de código
+
+Son reutilizables
+
+Reciben parámetros o argumentos y tienen una salida
 
 ## Ejemplo
 
