@@ -40,9 +40,26 @@ anillos <-c(pN, F, F, F, T, T, T, T)
 # DataFrame (conjunto de vectores de diferentes tipos)
 informacion_planetas <- data.frame(planeta, tipo, diametro, rotacion, anillos)
 
-print(informacion_planetas)
+# Condicionales
+
+if(informacion_planetas$rotacion >= 365) {
+  print("Días terrestres")
+} else {
+  print("No son días terrestres")
+}
+
+# Ciclos
+
+num <- 0
+while(num < 8) {
+  print(informacion_planetas[,num])
+  num <- num +1
+}
+
 
 # Funciones
+
+print(informacion_planetas)
 
 # Muestra la estructura (tipos de datos) de la tabla
 str(informacion_planetas)
@@ -53,19 +70,5 @@ summary(informacion_planetas)
 # Muestra toda la información del planeta tierra
 
 subset(informacion_planetas, planeta=="Tierra")
-
-# 
-
-if(informacion_planetas$rotacion >= 365) {
-    print("Días terrestres")
-} else {
-    print("No son días terrestres")
-}
-
-num <- 0
-while(num < 8) {
-  print(informacion_planetas[,num])
-  num <- num +1
-}
 
 
