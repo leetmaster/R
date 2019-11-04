@@ -27,15 +27,15 @@ Clic en la parte de “RStudio 1.2.1335…”, Para iniciar la descarga
 
 En 1969 el lenguaje de programación más utilizado era Fortran.
 
-Debido a su capacidad para el procesamiento númerico era utilizado para análisis estadístico e incluso ayudó a la NASA a llegar a la luna. Desafortuadamente era lento y difícil de programar por lo que el procesamiento tomaba demasiado tiempo.
+Debido a su capacidad para el procesamiento numérico era utilizado para análisis estadístico e incluso ayudó a la NASA a llegar a la luna. Desafortunadamente era lento y difícil de programar por lo que el procesamiento tomaba demasiado tiempo.
 
-En 1979 los invesitagores John Chambers, Rick Becker y Allan Wilks de los laboratorios Bell desarrollaron el lenguaje S como una alternativa para transformar ideas en software de manera más rápida.
+En 1979 los investigadores John Chambers, Rick Becker y Allan Wilks de los laboratorios Bell desarrollaron el lenguaje S como una alternativa para transformar ideas en software de manera más rápida.
 
 A partir de 1981, S se distribuyó con fines comerciales y educativos afuera de los laboratorios Bell por medio de AT&T y sufrió varios cambios como la sustitución de macros por funciones y agregando funciones de modelado estadístico.
 
 En 1991, en el Departamento de Estadística de la Universidad de Auckland en Nueva Zelanda, Ross Ihaka y Robert Gentleman crean R como un subdialecto de S.
 
-Finalmente, R adopta la licencia publica general GNU convirtiéndose en software libre en 1995, liberando la primera versión estable en el año 2000. Desde entonces, R ha sido uno de los lenguajes más utilizados para la manipulación de datos para el cómputo estadístico y gráfico tanto en el sector público como privado.
+Finalmente, R adopta la Licencia Pública General GNU convirtiéndose en software libre en 1995, liberando la primera versión estable en el año 2000. Desde entonces, R ha sido uno de los lenguajes más utilizados para la manipulación de datos para el cómputo estadístico y gráfico tanto en el sector público como privado.
 
 ![Historia de R](https://static.javatpoint.com/tutorial/r/images/history-of-r-programming.png)
 
