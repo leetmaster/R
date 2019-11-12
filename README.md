@@ -1,5 +1,5 @@
-# R
-R para principiantes
+# Taler de R para principiantes
+Semana de Estudios Socioterritoriales
 
 ## La historia de R
 
@@ -17,16 +17,16 @@ Finalmente, R adopta la Licencia Pública General GNU convirtiéndose en softwar
 
 ![Historia de R](https://static.javatpoint.com/tutorial/r/images/history-of-r-programming.png)
 
-##Recordatorio de Estadística descriptiva
+## Recordatorio de Estadística descriptiva
 Números y cálculos para resumir datos crudos.
 
-###Población estadística
+### Población estadística
 Conjunto finito o infinito de elementos, denominados individuos, sobre los cuales se realizan observaciones.
 
-###Muestra
+### Muestra
 Subconjunto finito de una población. El número de individuos que forman la muestra se denomina tamaño muestral.
 
-###Variable o carácter
+### Variable o carácter
 Cada una de las características que pueden observarse en un individuo de la muestra. 
 
 **Dicotómicas**
