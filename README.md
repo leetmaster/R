@@ -1,4 +1,4 @@
-# Taler de R para principiantes
+# Taller de R para principiantes
 Semana de Estudios Socioterritoriales
 
 ## La historia de R
