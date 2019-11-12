@@ -1,6 +1,62 @@
 # R
 R para principiantes
 
+## La historia de R
+
+En 1969 el lenguaje de programación más utilizado era Fortran.
+
+Debido a su capacidad para el procesamiento numérico era utilizado para análisis estadístico e incluso ayudó a la NASA a llegar a la luna. Desafortunadamente era lento y difícil de programar por lo que el procesamiento tomaba demasiado tiempo.
+
+En 1979 los investigadores John Chambers, Rick Becker y Allan Wilks de los laboratorios Bell desarrollaron el lenguaje S como una alternativa para transformar ideas en software de manera más rápida.
+
+A partir de 1981, S se distribuyó con fines comerciales y educativos afuera de los laboratorios Bell por medio de AT&T y sufrió varios cambios como la sustitución de macros por funciones y agregando funciones de modelado estadístico.
+
+En 1991, en el Departamento de Estadística de la Universidad de Auckland en Nueva Zelanda, Ross Ihaka y Robert Gentleman crean R como un subdialecto de S.
+
+Finalmente, R adopta la Licencia Pública General GNU convirtiéndose en software libre en 1995, liberando la primera versión estable en el año 2000. Desde entonces, R ha sido uno de los lenguajes más utilizados tanto en el sector público como privado para la manipulación de datos y para modelar y solucionar probelmas estadísticos.
+
+![Historia de R](https://static.javatpoint.com/tutorial/r/images/history-of-r-programming.png)
+
+##Recordatorio de Estadística descriptiva
+Números y cálculos para resumir datos crudos.
+
+###Población estadística
+Conjunto finito o infinito de elementos, denominados individuos, sobre los cuales se realizan observaciones.
+
+###Muestra
+Subconjunto finito de una población. El número de individuos que forman la muestra se denomina tamaño muestral.
+
+###Variable o carácter
+Cada una de las características que pueden observarse en un individuo de la muestra. 
+
+**Dicotómicas**
+Cuando tienen dos categorías.
+
+**Cualitativas, categóricas (o alfanuméricas)**
+Nominales u ordinales.
+
+**Cuantitativas (o numéricas)**
+Continuas o discretas.
+
+### Medidas de tendencia central
+
+**Media**
+Es el valor que se espera al tener un nuevo individuo dentro de la muestra.
+
+**Mediana**
+La mediana es el valor de la variable que ocupa la posición central, cuando los datos se disponen en orden de magnitud.
+
+**Moda**
+La moda es el valor de la variable que más se repite.
+
+### Medidas de dispersión
+
+**Varianza**
+La varianza es la media de las diferencias con la media elevadas al cuadrado, por lo que su valor siempre será positivo.
+
+**Desviación estándar**
+Mide cuanto se separan los datos y su valor es la raíz cuadrada de la desviación estándar.
+
 ## Instalación de R y RStudio
 
 Para poder tener RStudio primero tenemos que descargar R, para esto clic en el siguiente enlace.
@@ -23,22 +79,6 @@ https://www.rstudio.com/products/rstudio/download/#download
 
 Clic en la parte de “RStudio 1.2.1335…”, Para iniciar la descarga 
 
-## La historia de R
-
-En 1969 el lenguaje de programación más utilizado era Fortran.
-
-Debido a su capacidad para el procesamiento numérico era utilizado para análisis estadístico e incluso ayudó a la NASA a llegar a la luna. Desafortunadamente era lento y difícil de programar por lo que el procesamiento tomaba demasiado tiempo.
-
-En 1979 los investigadores John Chambers, Rick Becker y Allan Wilks de los laboratorios Bell desarrollaron el lenguaje S como una alternativa para transformar ideas en software de manera más rápida.
-
-A partir de 1981, S se distribuyó con fines comerciales y educativos afuera de los laboratorios Bell por medio de AT&T y sufrió varios cambios como la sustitución de macros por funciones y agregando funciones de modelado estadístico.
-
-En 1991, en el Departamento de Estadística de la Universidad de Auckland en Nueva Zelanda, Ross Ihaka y Robert Gentleman crean R como un subdialecto de S.
-
-Finalmente, R adopta la Licencia Pública General GNU convirtiéndose en software libre en 1995, liberando la primera versión estable en el año 2000. Desde entonces, R ha sido uno de los lenguajes más utilizados para la manipulación de datos para el cómputo estadístico y gráfico tanto en el sector público como privado.
-
-![Historia de R](https://static.javatpoint.com/tutorial/r/images/history-of-r-programming.png)
-
 ## El ambiente de desarrollo
 
 ![Ambiente de desarrollo RStudio](http://wiki.awf.forst.uni-goettingen.de/wiki/images/thumb/f/f6/02-RStudio.jpg/500px-02-RStudio.jpg)
@@ -51,21 +91,6 @@ C. Variables y datos que hemos cargado al ambiente de trabajo
 
 D. Visualización de las gráficas
 
-## Estadística descriptiva
-
-### Medidas de tendencia central
-
-Media
-
-Mediana
-
-Moda
-
-### Medidas de dispersión
-
-Varianza
-
-Desviación estándar
 
 ## Fundamentos de programación
 
