@@ -66,19 +66,17 @@ summary(df)
 #install.packages("ggplot2")
 library("ggplot2")
 
-ggplot(df, aes(x=Cursos)) + geom_histogram(binwidth=5, color="white", fill="navy")
+ggplot(df, aes(x=Cursos)) + geom_histogram(binwidth=5, color="white", fill="navy") + theme_linedraw()
 
-ggplot(df, aes(x=Alcaldia,y=Cursos)) + geom_boxplot(color="black", fill="red")
+ggplot(df, aes(x=Alcaldia,y=Cursos)) + geom_boxplot(color="black", fill="red") + theme_minimal()
 
-ggplot(df, aes(x=Alcaldia,y=Cursos)) + geom_point(color="green")
+ggplot(df, aes(x=Alcaldia,y=Cursos)) + geom_point(color="green") + theme_classic()
 
-
-plot(df)
-hist(df$Cursos)
 
 # Obtener el promedio de cursos impartidos
-
 mean(df$Cursos)
+
+# Obtener la mediana de los cursos impartidos
 median(df$Cursos)
 
 # Obtener la varianza de la columna Cursos
@@ -96,7 +94,6 @@ sd(df$Cursos)
 arrange(df, Año)
 
 # Guardar en una variable únicamente la columna 2, para ello utilizamos su índice
-
 alcaldias <- df[, 2]
 
 print(alcaldias)
