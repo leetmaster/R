@@ -1,5 +1,6 @@
-# Taller de R para principiantes
-Semana de Estudios Socioterritoriales
+# Semana de Estudios Socioterritoriales
+Taller de R para principiantes
+
 
 ## La historia de R
 
@@ -132,14 +133,12 @@ Son reutilizables
 
 Reciben parámetros o argumentos y tienen una salida
 
-## Ejemplo
-
-## Ejercicio
-
 ## Bibliografía
 
 Wheelan, C. J. (2014). Descriptive Statistics: Who was the best baseball player of all time?. En *Naked Statistics: Stripping the Dread from the Data*(19-32). New York: W.W. Norton.
 
 Grolemund G. & Wickham H. (2017). Data Transformation. En *R for Data Science*. California: O’Reilly.
+
+Grolemund G. & Wickham H. (2017). Data Visualization. En *R for Data Science*. California: O’Reilly.
 
 Silver, N. (2012). *The signal and the noise: Why so many predictions fail--but some don't*. New York: Penguin Press.
