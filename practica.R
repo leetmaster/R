@@ -4,8 +4,7 @@ rm(list=ls())
 setwd('~')
 getwd()
 
-# Usando el ejemplo de los planetas
-
+# Siguiendo el ejemplo de los planetas
 # Crear un vector con los nombres de las alcaldías de la CDMX
 alcaldia <- c("Azcapotzalco",
               "Coyoacán",
@@ -24,8 +23,7 @@ alcaldia <- c("Azcapotzalco",
               "Miguel Hidalgo",
               "Venustiano Carranza")
 
-# Crear un vector con el número de habitantes de cada uno
-
+# Crear un vector con el número de habitantes de cada una
 habitantes <- c(400161,
                 608479,
                 199224,
@@ -44,7 +42,6 @@ habitantes <- c(400161,
                 427263)
 
 # Crear un vector indicando si el partido gobernante es Morena o no
-
 morena <- c(T,
              F,
              F,
@@ -63,22 +60,25 @@ morena <- c(T,
              F
              )
 
+# Crear un nuevo dataframe usando el vector de alcaldias como columna principal
 informacion_alcaldias <- data.frame(habitantes, morena, row.names = alcaldia)
 
+# Visualizar la información de algúna alcaldía
 informacion_alcaldias["Cuauhtemoc",]
 
 # Ordenamos el dataframe por alcaldía
 informacion_alcaldias <- informacion_alcaldias[order(row.names(informacion_alcaldias), decreasing = FALSE),]
 
-# ¿Qué otros ordenamientos podemos hacer?
+# Mostramos el dataframe ordenado
 
-print(informacion_alcaldias)
 
-str(informacion_alcaldias)
+# mostrar la estructura y el resumen del dataframe
 
-summary(informacion_alcaldias)
 
-# Obtengo el número total de habitantes de la CDMX
+# mostrar las medidas de tendencia central y de dispersión
+
+
+# ¿Cómo obtengo el número total de habitantes de la CDMX?
 sum(informacion_alcaldias$habitantes)
 
 # ¿Qué otra información podríamos agregar?
@@ -100,21 +100,21 @@ superficie <- c(96.17,
                 33.40,
                 122.00)
 
-# Agregamos el vector como una nueva columna
+# Agregamos el vector como una nueva columna a la tabla
 
 informacion_alcaldias['superficie'] <- superficie
 
-# ¿Cómo obteneos la superficie total de la CDMX?
-sum(informacion_alcaldias$superficie)
+# ¿Cómo obtenemos la superficie total de la CDMX?
+
 
 # Guardo mi dataframe final
 write.csv(informacion_alcaldias,"alcaldias.csv", row.names = TRUE)
 
 # Abro el archivo en un nuevo dataFrame
-df <- read.csv("alcaldias.csv", stringsAsFactors = TRUE)
 
-# Cambio el nombre de la columna 1 a "alcaldias"
-colnames(df)[1] <- "alcaldias"
+
+# Cambio el nombre de la columna 1 a "alcaldia"
+colnames(df)[1] <- "alcaldia"
 
 # ¿Cómo calculamos la densidad de población?
 
@@ -124,18 +124,17 @@ densidad_de_poblacion <- df$habitantes / df$superficie
 
 df['densidad'] <- round(densidad_de_poblacion, 2)
 
+# Muestro mi nuevo dataframe
+
+
 # R me permite graficar los datos
 # Uso la función plot para graficar un diagrama de dispersión de magnitud vs. indice
 plot(df)
 
-# si le paso dos parametros grafica x vs. y
-plot(df$densidad, df$habitantes, xlab="densidad", ylab="habitantes", main="Densidad de Poblacion")
+# Graficar habitantes, superficie y densidad de población
 
-hist(df$superficie, main="Superficie por alcaldía",
-     xlab="Superficie")
+barplot(df$habitantes, names.arg = df$alcaldia, main = "Habitantes por Alcaldia")
 
-barplot(df$habitantes, names.arg = df$alcaldias, main = "Habitantes por Alcaldia")
-barplot(df$superficie, names.arg = df$alcaldias, main = "Superficie por Alcaldia")
 
 
 # Guardo mi dataframe en un archivo nuevo

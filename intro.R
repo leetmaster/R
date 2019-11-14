@@ -57,7 +57,8 @@ summary(informacion_planetas)
 mean(informacion_planetas$rotacion)
 # Median
 median(informacion_planetas$rotacion)
-
+# Moda
+table(informacion_planetas$rotacion)
 # Varianza
 var(informacion_planetas$rotacion)
 # Desviación estandar
