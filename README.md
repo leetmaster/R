@@ -56,7 +56,7 @@ La moda es el valor de la variable que más se repite.
 La varianza es la media de las diferencias con la media elevadas al cuadrado, por lo que su valor siempre será positivo.
 
 **Desviación estándar**
-Mide cuanto se separan los datos y su valor es la raíz cuadrada de la desviación estándar.
+Mide cuanto se separan los datos y su valor es la raíz cuadrada de la varianza.
 
 ## Instalación de R y RStudio
 

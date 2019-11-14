@@ -40,9 +40,9 @@ anillos <-c(pA, F, F, F, T, T, T, T)
 # DataFrame (conjunto de vectores que soporta diferentes tipos de datos)
 # Un DataFrame se almacena en forma tabular, es decir filas y columnas
 # Usamos row.names para dar nombre a la columna principal
-informacion_planetas <- data.frame(tipo, diametro, rotacion, anillos, row.names = planeta)
+informacion_planetas <- data.frame( tipo, diametro, rotacion, anillos, row.names = planeta)
 
-# Funciones
+# Las funciones nos permiten realizar operaciones de manera automática
 # Imprime el dataframe
 print(informacion_planetas)
 
@@ -51,12 +51,20 @@ str(informacion_planetas)
 
 # Muestra un resuman de la tabla
 summary(informacion_planetas)
+
 # Media
+# Usamos el operador $ para acceder a los datos numéricos de la tabla
 mean(informacion_planetas$rotacion)
 # Median
 median(informacion_planetas$rotacion)
-# Muestra un resumen de los datos de la tabla
-summary(informacion_planetas)
+
+# Varianza
+var(informacion_planetas$rotacion)
+# Desviación estandar
+sd(informacion_planetas$rotacion)
+
+# Hay otra forma de calcular la desviación estandar
+var(informacion_planetas$rotacion) ** 0.5
 
 # Muestra toda la información del planeta tierra
 informacion_planetas["Tierra",]
@@ -68,8 +76,11 @@ informacion_planetas[,"rotacion"]
 write.csv(informacion_planetas,"planetas.csv")
 
 # Podemos abrir un set de datos desde un archivo
-df <- read.csv("planetas.csv", stringsAsFactors = TRUE, row.names = NULL)
+df <- read.csv("planetas.csv", stringsAsFactors = TRUE)
 
+# Cuando abrimos un sed de datos automáticamente agrega el número de observación
+# Mueve a la derecha la columna principal con nombre "X"
+# Le cambiamos el nombre a nuestra columna principal
 colnames(df)[1] <- "planetas"
 
 # R me permite graficar los datos
@@ -77,9 +88,10 @@ colnames(df)[1] <- "planetas"
 plot(df)
 
 # si le paso dos parametros grafica x vs. y
-plot(df$rotacion, df$planeta, xlab="rotacion", ylab="planeta", main="Rotacion")
+plot(df$diametro,xlab = "Planeta" , ylab = "Diametro", type = "h",  main="Diametro de los Planetas")
+# Intenta cambiar type="s" por p, l, b, c, o, h, s, n
+# ¿Qué ocurre?
 
-hist(df$rotacion, main="Días que tarda en rotar",
-     xlab="Rotacion")
+plot(df$planeta,df$rotacion,xlab = "Planeta" , ylab = "Rotación", type = "p",  main="Rotación de los Planetas")
 
-barplot(df$diametro, names.arg = df$planeta, main = "Tamaño de los planetas")
+barplot(df$diametro, names.arg = df$planeta, main = "Planetas del sistema solar")
