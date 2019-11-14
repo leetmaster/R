@@ -23,7 +23,7 @@ str(df)
 # Mostrar resumen 
 summary(df)
 
-# graficar la ruta Revoluci髇
+# graficar la ruta Revoluci贸n
 
 plot(df[6])
 
@@ -31,22 +31,22 @@ plot(df[6])
 
 arrange(df, Mes)
 
-# Guardar en una variable 鷑icamente las columnas 5, 6 y 7
+# Guardar en una variable 煤nicamente las columnas 5, 6 y 7
 
 reforma <- df[, 5]
 patriotismo <- df[, 6]
 revolucion <- df[,7]
 
-# Obtener las medidas de dispresi髇 de la Ruta Revoluci髇
+# Obtener las medidas de dispresi贸n de la Ruta Revoluci贸n
 
-# TIP: El nombre de la tabla tiene espacios, se los quitamos con la siguiente funci髇
-names(df)[6]<-"Revoluci髇"
+# TIP: El nombre de la tabla tiene espacios, se los quitamos con la siguiente funci贸n
+names(df)[6]<-"Revoluci贸n"
 # Cambiemos todos los nombres por el nombre de la calle
 names(df)[5]<-"Reforma222"
 names(df)[7]<-"Patriotismo"
 
-var(df$Revoluci髇)
-sd(df$Revoluci髇)
+var(df$Revoluci贸n)
+sd(df$Revoluci贸n)
 
 
 # Agrupar la columna Patriotismo por mes y guardarla en una variable
@@ -63,14 +63,14 @@ tabla_patriotismo_por_mes
 
 df %>% sample_frac(0.50, rep=T)
 
-# Muestreo aleatorio simple con reemplazo: Despu閟 de que un elemento ha sido seleccionado del marco de la muestra se devuelve y es elegible para ser seleccionado nuevamente.
+# Muestreo aleatorio simple con reemplazo: Despu茅s de que un elemento ha sido seleccionado del marco de la muestra se devuelve y es elegible para ser seleccionado nuevamente.
 
 # Extraer 10 datos de forma aleatoria sin reemplazo.
 
 df %>%
 sample_n(10)
 
-# En un objeto guardar los d韆s que hubo m醩 de 1000 ciclistas en Reforma222
+# En un objeto guardar los d铆as que hubo m谩s de 1000 ciclistas en Reforma222
 
 names(df)[5]<-"Reforma222"
 reforma_mayor_que_1000 <- filter(df, Reforma222 >=1000)
@@ -79,5 +79,5 @@ reforma_mayor_que_1000
 # Guardar en una variable las fechas en que los 3 contadores registraron al menos 1000 ciclistas, cada uno
 
 names(df)[7]<-"Revolucion"
-contadores_mayor_1000 <- filter(select(df, D韆, Mes, A駉, Patriotismo, Reforma222, Revolucion), Patriotismo >= 1000, Reforma222 >= 1000, Revolucion >= 1000)
+contadores_mayor_1000 <- filter(select(df, D铆a, Mes, A帽o, Patriotismo, Reforma222, Revolucion), Patriotismo >= 1000, Reforma222 >= 1000, Revolucion >= 1000)
 contadores_mayor_1000

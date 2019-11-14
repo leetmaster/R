@@ -4,72 +4,13 @@ rm(list=ls())
 # Establecer el directorio de trabajo en la raiz
 setwd('~')
 
-# Operadores
+getwd()
 
-# Aritm閠icos
-
-# Suma
-1 + 2
-
-# Resta
-2 - 2
-
-# Multiplicaci髇
-5 * 3
-
-# Divisi髇
-4 / 2
-
-# Potencia
-
-3 ** 3
-
-# 緾髆o saco una raiz cuadrada usando potencia?
-
-
-
-# Relacionales
-# son usados para hacer comparaciones y siempre devuelven como resultado TRUE o FALSE (verdadero o falso, respectivamente).
-
-# Menor que	
-5 < 3
-
-# Menor o igual que	
-5 <= 3
-
-# Mayor que	
-5 > 3
-
-# Mayor o igual que	
-5 >= 3
-
-# Exactamente igual que	
-5 == 3
-
-# No es igual que	
-5 != 3
-
-# L骻icos
-# se usan en 醠gebra booleana para describir relaciones l骻icas
-
-# O	
-TRUE | FALSE
-
-# y	
-TRUE & FALSE
-
-# Negaci髇	
-!TRUE
-
-# Afirmaci髇
-isTRUE(TRUE)	
-
-# Variables y Tipos de datos en
-
+# Variables y Tipos de datos en R
 # Usamos el operador <- para asignarle un valor a una variable
 
 # Caracter
-pA <- "Mercurio"
+pP <- "Mercurio"
 
 pT <- "Terrestre"
 
@@ -79,14 +20,14 @@ pD <- 4879
 # Numerico real
 pR <- 58.16
 
-# L骻ico
-pN <- F
+# L贸gico
+pA <- F
 
-# 縋uedo expresar el valor de F de otra manera?
-
+# 驴Puedo expresar el valor de F de otra manera?
+pA <- FALSE
 # Vectores (conjuntos de un solo tipo de datos)
 
-planeta <- c(pA, "Venus", "Tierra", "Marte", "J鷓iter", "Saturno", "Urano", "Neptuno")
+planeta <- c(pP, "Venus", "Tierra", "Marte", "J煤piter", "Saturno", "Urano", "Neptuno")
 
 tipo <- c(pT, "Terrestre", "Terrestre", "Terrestre", "Gas", "Gas", "Gas", "Gas")
 
@@ -94,45 +35,51 @@ diametro <- c(pD, 12104, 12742, 6779, 139882, 116464, 50724, 49242)
 
 rotacion <- c(pR, 243, 365, 312.7, 314.2, 0.104, 0.1714, 0.167)
 
-anillos <-c(pN, F, F, F, T, T, T, T)
+anillos <-c(pA, F, F, F, T, T, T, T)
 
 # DataFrame (conjunto de vectores que soporta diferentes tipos de datos)
 # Un DataFrame se almacena en forma tabular, es decir filas y columnas
-
-informacion_planetas <- data.frame(planeta, tipo, diametro, rotacion, anillos)
-
-# Condicionales
-
-# Usamos el operador $ para acceder a una columna del dataframe
-if(informacion_planetas$rotacion >= 365) {
-  print("D韆s terrestres")
-} else {
-  print("No son d韆s terrestres")
-}
-
-# Ciclos
-
-num <- 0
-while(num < 8) {
-  print(informacion_planetas[,num])
-  num <- num +1
-}
+# Usamos row.names para dar nombre a la columna principal
+informacion_planetas <- data.frame(tipo, diametro, rotacion, anillos, row.names = planeta)
 
 # Funciones
+# Imprime el dataframe
 print(informacion_planetas)
 
 # Muestra la estructura (tipos de datos) de la tabla
 str(informacion_planetas)
 
+# Muestra un resuman de la tabla
+summary(informacion_planetas)
+# Media
+mean(informacion_planetas$rotacion)
+# Median
+median(informacion_planetas$rotacion)
 # Muestra un resumen de los datos de la tabla
 summary(informacion_planetas)
 
-# Instalaci髇 de paquetes
-# Solo se hace una vez
-#install.packages("dplyr")
+# Muestra toda la informaci贸n del planeta tierra
+informacion_planetas["Tierra",]
 
-# invocaci髇 de la biblioteca dplyr
-library(dplyr)
+# Muestra toda la informaci贸n de rotacion
+informacion_planetas[,"rotacion"]
 
-# Muestra toda la informaci髇 del planeta tierra
-subset(informacion_planetas, planeta=="Tierra")
+# Guardo mi dataframe final
+write.csv(informacion_planetas,"planetas.csv")
+
+# Podemos abrir un set de datos desde un archivo
+df <- read.csv("planetas.csv", stringsAsFactors = TRUE, row.names = NULL)
+
+colnames(df)[1] <- "planetas"
+
+# R me permite graficar los datos
+# Uso la funci贸n plot para graficar un diagrama de dispersi贸n de magnitud vs. indice
+plot(df)
+
+# si le paso dos parametros grafica x vs. y
+plot(df$rotacion, df$planeta, xlab="rotacion", ylab="planeta", main="Rotacion")
+
+hist(df$rotacion, main="D铆as que tarda en rotar",
+     xlab="Rotacion")
+
+barplot(df$diametro, names.arg = df$planeta, main = "Tama帽o de los planetas")
