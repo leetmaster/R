@@ -1,5 +1,6 @@
-# Semana de Estudios Socioterritoriales
-Programación estadística con R
+# Programación estadística con R
+
+Semana de Estudios Socioterritoriales
 
 
 ## La historia de R
@@ -96,6 +97,9 @@ D. Visualización de las gráficas
 En la estadística tradicional, las pruebas de hipótesis y los intervalos de confianza suelen depender de supuestos teóricos rígidos y fórmulas matemáticas memorizadas. Sin embargo, si sabes programar y escribir una simulación básica, puedes resolver casi cualquier problema estadístico mediante resampling, permutaciones y métodos Monte Carlo. La programación no es solo una herramienta para automatizar cálculos, sino un lenguaje para simular la aleatoriedad, poner a prueba supuestos de forma intuitiva y responder preguntas complejas sin depender de tablas probabilísticas.
 
 En este taller exploraremos la sintaxis esencial de R para construir este pensamiento algorítmico por medio de condicionales (if) y ciclos (for) para la ejecución repetitiva de código.
+
+<img width="840" height="840" alt="image" src="https://github.com/user-attachments/assets/01a74a6d-9c32-4e64-a57a-9672d018472c" />
+
 
 ## Bibliografía
 
