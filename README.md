@@ -93,50 +93,18 @@ D. Visualización de las gráficas
 
 ## Fundamentos de programación
 
-### Valores, Tipos de datos y variables
+En la estadística tradicional, las pruebas de hipótesis y los intervalos de confianza suelen depender de supuestos teóricos rígidos y fórmulas matemáticas memorizadas. Sin embargo, si sabes programar y escribir una simulación básica, puedes resolver casi cualquier problema estadístico mediante resampling, permutaciones y métodos Monte Carlo. La programación no es solo una herramienta para automatizar cálculos, sino un lenguaje para simular la aleatoriedad, poner a prueba supuestos de forma intuitiva y responder preguntas complejas sin depender de tablas probabilísticas.
 
-Caracter
-
-Numérico entero
-
-Numérico real
-
-Lógico
-
-Vector
-
-DataFrame
-
-### Operadores 
-
-Aritméticos
-
-Relacionales
-
-Lógicos
-
-### Condicionales
-
-if
-
-### Ciclos
-
-while
-
-### Funciones
-
-Encapuslan bloques de código
-
-Son reutilizables
-
-Reciben parámetros o argumentos y tienen una salida
+En este taller exploraremos la sintaxis esencial de R para construir este pensamiento algorítmico por medio de condicionales (if) y ciclos (for) para la ejecución repetitiva de código.
 
 ## Bibliografía
-
-Wheelan, C. J. (2014). Descriptive Statistics: Who was the best baseball player of all time?. En *Naked Statistics: Stripping the Dread from the Data*(19-32). New York: W.W. Norton.
 
 Grolemund G. & Wickham H. (2017). Data Transformation. En *R for Data Science*. California: O’Reilly.
 
 Grolemund G. & Wickham H. (2017). Data Visualization. En *R for Data Science*. California: O’Reilly.
 
 Silver, N. (2012). *The signal and the noise: Why so many predictions fail--but some don't*. New York: Penguin Press.
+
+VanderPlas, J. (2016). Statistics for Hackers [Conferencia]. PyCon 2016, Portland, OR.
+
+Wheelan, C. J. (2014). Descriptive Statistics: Who was the best baseball player of all time?. En *Naked Statistics: Stripping the Dread from the Data*(19-32). New York: W.W. Norton.
