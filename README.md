@@ -1,5 +1,5 @@
 # Semana de Estudios Socioterritoriales
-Taller de R para principiantes
+Programación estadística con R
 
 
 ## La historia de R
