@@ -16,8 +16,6 @@ En 1991, en el Departamento de Estadística de la Universidad de Auckland en Nue
 
 Finalmente, R adopta la Licencia Pública General GNU convirtiéndose en software libre en 1995, liberando la primera versión estable en el año 2000. Desde entonces, R ha sido uno de los lenguajes más utilizados tanto en el sector público como privado para la manipulación de datos y para modelar y solucionar probelmas estadísticos.
 
-![Historia de R](https://static.javatpoint.com/tutorial/r/images/history-of-r-programming.png)
-
 ## Recordatorio de Estadística descriptiva
 Números y cálculos para resumir datos crudos.
 
